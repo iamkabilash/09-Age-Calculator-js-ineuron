@@ -16,11 +16,16 @@ function getAge(){
         error.style.display = "block";
         age.style.display = "none";
     } else{
-        var diff = Math.floor(today.getTime() - birthDate.getTime());
-        var day = 1000 * 60 * 60 * 24;
-        var resultDay = Math.floor(diff/day) ? Math.floor(diff/day) : "0";
-        var resultMonth = Math.floor(resultDay/31) ? Math.floor(resultDay/31) : "0";
-        var resultYear = Math.floor(resultMonth/12) ? Math.floor(resultMonth/12) : "0";
+        let diff = Math.floor(today.getTime() - birthDate.getTime());
+        let day = 1000 * 60 * 60 * 24;
+
+        let resultYear = Math.floor(diff/day/365) ? Math.floor(diff/day/365) : "0";
+        let resultMonth = Math.floor((diff/day%365)/30) ? Math.floor((diff/day%365)/30) : "0";
+        let resultDay = Math.floor((diff/day%365)%30) ? Math.floor((diff/day%365)%30) : "0";
+
+        // let resultDay = Math.floor(diff/day) ? Math.floor(diff/day) : "0";
+        // let resultMonth = Math.floor(resultDay/31) ? Math.floor(resultDay/31) : "0";
+        // let resultYear = Math.floor(resultMonth/12) ? Math.floor(resultMonth/12) : "0";
         
         years.innerText = resultYear;
         months.innerText = resultMonth;
