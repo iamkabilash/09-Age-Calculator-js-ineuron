@@ -23,6 +23,7 @@ function getAge(){
         let resultMonth = Math.floor((diff/day%365)/30) ? Math.floor((diff/day%365)/30) : "0";
         let resultDay = Math.floor((diff/day%365)%30) ? Math.floor((diff/day%365)%30) : "0";
 
+        // to find total no of days, months and years of birth
         // let resultDay = Math.floor(diff/day) ? Math.floor(diff/day) : "0";
         // let resultMonth = Math.floor(resultDay/31) ? Math.floor(resultDay/31) : "0";
         // let resultYear = Math.floor(resultMonth/12) ? Math.floor(resultMonth/12) : "0";
